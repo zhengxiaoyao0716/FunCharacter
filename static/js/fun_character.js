@@ -86,9 +86,12 @@ return function (image, outDiv, sampling, scale, fontSize, lineHeight, chars) {
     //compare();
     
     var out = document.createElement("p");
-    out.style.fontSize = fontSize || "12px";
     out.textContent = outText;
     out.style.transformOrigin = "top left";
+    out.style.marginLeft = "auto";
+    out.style.marginRight = "auto";
+    out.style.textAlign = "center";
+    out.style.fontSize = fontSize || "12px";
     try {
         out.style.transform = "scale(" + scale[0] + ", " + scale[1] + ")";
     } catch (e) {
