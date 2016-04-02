@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="Keywords" content="image,acsii"/>
+    <meta name="Description" content="把图像转化成ascii码"/>
+    <link rel="shortcut icon" href="http://os.zheng0716.com/static/image/favicon.ico"/>
+    <title>好玩的字符画</title>
+</head>
+<body>
+    <div id="dropbox" style="border:3px dashed; font-size: 24px; text-align:center; height: 4em; line-height: 4em; margin-bottom: 10px;">
+        Please drag your image hear.  请将图片拖拽至此处
+    </div>
+    <div>
+        <button onclick='
+            document.body.getElementsByTagName("input")[0].value="{\"sampling\": [1, 0.4], \"scale\":[1, 1], \"fontSize\": \"12px\", \"lineHeight\": \"\", \"chars\": \"\"}";
+            fun_character.reload([1, 0.4], [1, 1], "12px", "", "");
+        ' style="width: 8%;">1、减少采样</button>
+        <button onclick='
+            document.body.getElementsByTagName("input")[0].value="{\"sampling\": [1, 1], \"scale\":[1, 0.4], \"fontSize\": \"12px\", \"lineHeight\": \"\", \"chars\": \"\"}";
+            fun_character.reload([1, 1], [1, 0.4], "12px", "", "");
+        ' style="width: 8%;">2、缩放字高</button>
+        <button onclick='
+            document.body.getElementsByTagName("input")[0].value="{\"sampling\": [1, 1], \"scale\":[1, 1], \"fontSize\": \"13px\", \"lineHeight\": \"6px\", \"chars\": \"\"}";
+            fun_character.reload([1, 1], [1, 1], "13px", "6px", "");
+        ' style="width: 8%;">3、压缩行距</button>
+        <button onclick='
+            document.body.getElementsByTagName("input")[0].value="{\"sampling\": [1, 0.4], \"scale\":[0.167, 0.167], \"fontSize\": \"12px\", \"lineHeight\": \"\", \"chars\": \"\"}";
+            fun_character.reload([1, 0.4], [0.167, 0.167], "12px", "", "");
+        ' style="width: 8%;">4、原图尺寸</button>
+        <input type="text" value='{"sampling": [1, 0.4], "scale":[1, 1], "fontSize": "12px", "lineHeight": "", "chars": ""}' style="width: 64%; display: inline-block; float: right;"></input>
+    </div>
+    <div id="outDiv"></div>
+    <script src="./static/js/drag_file.js"></script>
+    <script src="./static/js/fun_character.js"></script>
+</body>
