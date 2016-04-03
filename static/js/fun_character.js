@@ -85,7 +85,7 @@ return function (image, outDiv, sampling, scale, fontSize, lineHeight, chars) {
     }
     //compare();
     
-    var out = document.createElement("p");
+    var out = document.createElement("pre");
     out.textContent = outText;
     out.style.transformOrigin = "top left";
     out.style.marginLeft = "auto";
